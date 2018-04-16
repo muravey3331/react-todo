@@ -1,0 +1,155 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background: #ededed;
+}
+ul{
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+*{
+  outline: none;
+}
+.card{
+  margin: 40px auto;
+  width: 360px;
+  padding: 30px;
+  background: #fff;
+}
+.task-item{
+  width: 100%;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  justify-content:space-between;
+}
+.task-item:hover .delete-btn{
+  opacity: 1;
+}
+
+
+.task__checkbox{
+  display: none;
+ }
+.task__label{
+  position: relative;
+  display: block;
+  margin: 10px;
+  height: 20px;
+  width: 20px;
+  border:1px solid #aaa;
+  border-radius: 2px;
+}
+.task__checkbox:hover~ .task__label{
+  border-color: #00b4c0;
+}
+
+
+.task__checkbox:checked~ .task__label:before{
+  position: absolute;
+  content: "";
+  display: block;
+  top: 6px;
+  left: 2px;
+  height: 6px;
+  width: 16px;
+  box-sizing: border-box;
+  transform: rotate(-45deg);
+  border-width: 0 0 2px 2px ;
+  border-color: #00b4c0;
+  border-style: solid;
+}
+
+.task__checkbox:checked~ .task__label{
+  border-color: #00b4c0;
+}
+
+
+
+
+.task__text{
+  position: relative;
+  display: block;
+  width: 100%;
+  line-height: 20px;
+  font-size: 1rem;
+  padding: 10px 40px 10px 0;
+  box-sizing: border-box;
+}
+.task__text:hover{
+  /*cursor: pointer;*/
+}
+
+.delete-btn{
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  height: 40px;
+  width: 40px;
+  border: none;
+  background: #fff;
+}
+.delete-btn:hover{
+  cursor: pointer;
+}
+.delete-btn > span{
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 40px;
+}
+.delete-btn > span:before,
+.delete-btn > span:after{
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  height: 2px;
+  width: 16px;
+  background: red;
+  opacity: 0.3;
+}
+.delete-btn:hover > span:before,
+.delete-btn:hover > span:after{
+  opacity: 1;
+}
+
+.delete-btn > span:before{
+  transform: rotate(45deg);
+}
+.delete-btn > span:after{
+  transform: rotate(-45deg);
+}
+
+
+
+
+.edit-field{
+  width: 100%;
+  height: 40px;
+  border: none;
+  font-size: 1rem;
+  border-bottom:1px solid #999;
+}
+.add-field{
+  padding-left: 20px;
+  border: 1px dashed #00b4c0;
+  border-radius: 5px;
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+}
+.filter__link{
+  color: darkgray;
+}
+.filter__link:hover{
+  color: #00b4c0;
+  cursor: pointer;
+}
+.filter__link.active{
+  color: #00b4c0;
+}
